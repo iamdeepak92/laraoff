@@ -112,8 +112,6 @@
         return $ip;
     }
 
-
-
     $user_ip = getUserIP();
     $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$user_ip));
     $country = $geo["geoplugin_countryName"];
