@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'lname' => 'required|string|max:20',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'ip' =>     'string |min:40',
         ]);
     }
 
@@ -68,6 +69,7 @@ class RegisterController extends Controller
             'lname' => $data['lname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'ip' => \Request::ip(),
         ]);
     }
 }

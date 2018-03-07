@@ -110,7 +110,7 @@
         }
 
         return $ip;
-    }
+    };
 
     $user_ip = getUserIP();
     $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$user_ip));
@@ -127,6 +127,41 @@
     <div id="ip"></div>
 </div>
 @endsection
+
+{{-- <?php    
+function getUserIP()
+    {
+        $client  = @$_SERVER['HTTP_CLIENT_IP'];
+        $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+        $remote  = $_SERVER['REMOTE_ADDR'];
+
+        if(filter_var($client, FILTER_VALIDATE_IP))
+        {
+            $ip = $client;
+        }
+        elseif(filter_var($forward, FILTER_VALIDATE_IP))
+        {
+            $ip = $forward;
+        }
+        else
+        {
+            $ip = $remote;
+        }
+
+        return $ip;
+    };
+echo $PublicIP = getUserIP(); 
+     $json  = file_get_contents("https://freegeoip.net/json/$PublicIP");
+     
+     $json  =  json_decode($json ,true);
+echo $country =  $json['country_name']."<br>";
+echo $region= $json['region_name']."<br>";
+echo $city = $json['city']."<br>";
+
+?> --}}
+
+
+
 
 {{-- <?php
 function getBrowser() 
