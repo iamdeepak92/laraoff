@@ -14,15 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/ip', function () {
-    echo \Request::ip();
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
