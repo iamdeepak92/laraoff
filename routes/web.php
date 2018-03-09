@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function(){
+	$ip = geoip()->getLocation('117.220.170.153');
+
+	echo $ip->country;
+});
